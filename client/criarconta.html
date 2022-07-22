@@ -25,7 +25,7 @@
     </nav>
     
     <main class="container">
-      <!-- <form> -->
+      <form onsubmit="return catchInformation();">
         <div class="row">
           <div class="col">
             <label for="userName" class="fs-4">Nome</label>
@@ -48,8 +48,8 @@
           <label for="checkAgree">Concordo com os termos e condições</label>
         </div>
 
-        <button class="btn btn-success" onclick="catchInformation()">Criar a conta</button>
-      <!-- </form> -->
+        <button type="submit" class="btn btn-success">Criar a conta</button>
+      </form>
     </main>
  
 

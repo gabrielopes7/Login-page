@@ -22,7 +22,7 @@ router.post("/newUser", express.json(), (req,res) =>{
 
     users.newUser(id, name,lastName,email,password);
 
-    res.send("User Adicionado");;
+    res.status(200).send("O usuário foi criado");
 
 })
 

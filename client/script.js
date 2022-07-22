@@ -26,10 +26,13 @@ function catchInformation(){
             window.alert("Conta criada com sucesso!");
         }else if(!validEmail(email,emailValid)){
             window.alert("É necessário um email válido ou os emails são diferentes");
+            return false;
         }else if(!validCheck(check)){
             window.alert("Você precisa aceitar os termos");
-        }else{
+            return false;
+        }else if(!validPassword(password)){
             window.alert("Sua senha deve conter no mínimo 6 caracteres");
+            return false;
         }
     }
 
