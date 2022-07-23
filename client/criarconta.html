@@ -25,7 +25,7 @@
     </nav>
     
     <main class="container">
-      <form onsubmit="return catchInformation();">
+      <form onsubmit="return catchInformation()">
         <div class="row">
           <div class="col">
             <label for="userName" class="fs-4">Nome</label>
@@ -42,7 +42,12 @@
         <input type="email" class="form-control" id="emailValidation" placeholder="Confirme o email">
         <label for="userPassword" class="fs-4">Senha</label>
         <input type="password" class="form-control" id="userPassword" placeholder="Senha">
-        <label for="userPassword" class="fs-6">A senha precisa conter no mínimo 6 caracteres</label>
+        <ul>
+          <li>Pelo menos 1 caractere minúsculo</li>
+          <li>Pelo menos 1 caractere maiúsculo</li>
+          <li>Pelo menos 1 número</li>
+          <li>Pelo menos 6 caracteres</li>
+        </ul>
         <div class="form-check mt-4">
           <input type="checkbox" class="form-check-input" id="checkAgree">
           <label for="checkAgree">Concordo com os termos e condições</label>

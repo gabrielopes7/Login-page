@@ -8,7 +8,6 @@ router.get("/show", (req,res) =>{
 
 // Consigo gravar os usuários pelo Insomnia, agora preciso achar uma maneira de manter os usuários salvos em um banco de dados e fazer na minha página principal um modo de achar ele nesse banco.
 
-// Preciso achar uma maneira de não permitir envio de formulário se tiver com erro.
 
 // Eu não precisarei mostrar meu usuário na tela, e sim fazer uma validação em um banco de dados para que eu possa mostrar uma página que estará logado o meu usuário "correto" e será mostrado na tela
 

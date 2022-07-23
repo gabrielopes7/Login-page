@@ -31,7 +31,7 @@ function catchInformation(){
             window.alert("Você precisa aceitar os termos");
             return false;
         }else if(!validPassword(password)){
-            window.alert("Sua senha deve conter no mínimo 6 caracteres");
+            window.alert("Sua senha deve cumprir as 4 regras");
             return false;
         }
     }
@@ -65,7 +65,8 @@ function submitUser(user){
 
 
 function validPassword(password){
-    if(password.length < 6){
+    const rePassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/
+    if(!rePassword.test(password)){
         return false;
     }
     return true;
