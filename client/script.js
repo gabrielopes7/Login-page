@@ -1,4 +1,4 @@
-let createUser = new Object();
+
 
 class User {
   constructor(name, lastName, email, password) {
@@ -25,15 +25,15 @@ function catchInformation() {
     password == ""
   ) {
     window.alert("Verifique se há campos vazios");
+    return false;
   } else {
     if (
       validEmail(email, emailValid) &&
       validCheck(check) &&
       validPassword(password)
     ) {
-      var user = new User(name, lastName, email, password);
+      const user = new User(name, lastName, email, password);
       submitUser(user);
-      window.alert("Conta criada com sucesso!");
     } else if (!validEmail(email, emailValid)) {
       window.alert("É necessário um email válido ou os emails são diferentes");
       return false;
@@ -56,12 +56,11 @@ function submitUser(user) {
   };
 
   fetch(URL, options).then((res) => {
-    console.log(res);
-    document.getElementById("userName").value = "";
-    document.getElementById("userLastName").value = "";
-    document.getElementById("userEmail").value = "";
-    document.getElementById("emailValidation").value = "";
-    document.getElementById("userPassword").value = "";
+    if(res.status == 205){
+      window.alert("Email já cadastrado");
+    }else if(res.status == 201){
+      window.alert("Conta criada com sucesso!");
+    }
   });
 }
 
