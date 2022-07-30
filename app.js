@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const path = require("path");
-const criarconta = require('./routes/createaccount');
+const criarConta = require('./routes/createaccount');
+const validarUser = require('./routes/signuser');
 const mongoose = require('mongoose');
 
 mongoose.connect("mongodb://localhost:27017/user").then(db =>{console.log("Banco carregado")}).catch(error =>{console.log(error)})
@@ -9,12 +10,13 @@ mongoose.connect("mongodb://localhost:27017/user").then(db =>{console.log("Banco
 
 
 app.use(express.static(path.join(__dirname, 'client')));
-
-// Agora eu precisarei, procurar meu usuario em meu banco de dados, e após isso validar a senha e entrar na conta, que será uma página dando Olá para a pessoa.
+app.use("/", express.json(), validarUser);
 
 
 app.use("/criarconta", express.static(path.join(__dirname, 'client/criarconta.html')));
-app.use("/criarconta",express.json() ,criarconta);
+app.use("/criarconta",express.json() ,criarConta);
+
+app.use("/minha-conta", express.static(path.join(__dirname, "client/user.html")));
 
 
 

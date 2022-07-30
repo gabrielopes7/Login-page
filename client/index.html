@@ -15,12 +15,12 @@
   <body>
     <nav>
       <ul class="nav nav-tabs">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" disabled>Home</a></li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Área do usuário</a>
+          <a class="nav-link active" href="http://localhost:5000/">Área do usuário</a>
         </li>
-        <li class="nav-item"><a class="nav-link" href="#">Produtos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" disabled>Produtos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" disabled>Contato</a></li>
       </ul>
     </nav>
     <h1 class="text-center mt-4">Área de login</h1>
@@ -41,12 +41,12 @@
                 >Senha</label
               >
               <div class="col-sm-8 m">
-                <input type="password" class="form-control" id="inputSenha" placeholder="Senha">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
               </div>
             </div>
           </form>
           <div class="text-center mt-4">
-            <button type="submit" class="btn btn-primary">Entrar</button>
+            <button type="submit" class="btn btn-primary" onclick="userValidation()">Entrar</button>
             <button class="btn">Esqueceu a senha?</button>
           </div>
           <div class="text-center mt-4">

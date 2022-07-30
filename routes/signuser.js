@@ -1,1 +1,7 @@
-// Aqui será minha rota para verificar o usuario e devolver uma página diferente de acordo com o usuario diferente.
+const express = require('express');
+const router = express.Router();
+const users = require('../controller/controllers');
+
+router.post("/", users.validUser)
+
+module.exports = router;

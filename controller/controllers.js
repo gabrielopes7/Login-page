@@ -4,7 +4,7 @@ const addUser =  async (req,res) => {
     let link = new User (req.body);
     try{
         await link.save();
-        res.send("User criado com sucesso");
+        res.status(201).send("User criado com sucesso");
     }catch (error){
         res.send(error)
     }
@@ -12,6 +12,23 @@ const addUser =  async (req,res) => {
 };
 
 
-// Aqui eu terei que criar um controller que pesquisa pelo usuario.
+const validUser = async (req, res) =>{
+    let email = req.body.email;
+    let password = req.body.password;
 
-module.exports = {addUser}
+    let doc = await User.findOne({email: email, password: password});
+    if(doc){
+        res.redirect("/minha-conta");
+    }else{
+        let validEmail = await User.findOne({email: email});
+        if(validEmail){
+            res.status(401).send("Verifique sua senha");
+        }else{
+            res.status(400).send("Este email não está cadastrado")
+        }
+    }
+
+
+}
+
+module.exports = {addUser , validUser}
