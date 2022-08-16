@@ -26,10 +26,8 @@ function userValidation (){
             console.log(res)
             if(res.redirected == true){
                 window.location.href = "http://localhost:5000/minha-conta";
-            }else if(res.status == 401){
-                window.alert("Verifique sua senha");
-            }else{
-                window.alert("Este email não está cadastrado")
+            }else if(res.status == 400){
+                window.alert("Email ou senha incorretos!");
             }
         })
     }

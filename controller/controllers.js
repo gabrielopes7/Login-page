@@ -1,7 +1,15 @@
 const User = require("../model/user");
+const bcrypt = require("bcryptjs");
+const user = require("../model/user");
+
 
 const addUser = async (req, res) => {
-  let link = new User(req.body);
+  let link = new User({
+    name: req.body.name,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: bcrypt.hashSync(req.body.password)
+  })
   let find = await User.findOne({ email: link.email });
   try {
     if (find) {
@@ -16,20 +24,15 @@ const addUser = async (req, res) => {
 };
 
 const validUser = async (req, res) => {
-  let email = req.body.email;
-  let password = req.body.password;
+  const userSelected = await User.findOne({email: req.body.email})
+  const passwordMatched = bcrypt.compareSync(req.body.password, userSelected.password);
 
-  let doc = await User.findOne({ email: email, password: password });
-  if (doc) {
+  if(userSelected && passwordMatched){
     res.redirect("/minha-conta");
-  } else {
-    let validEmail = await User.findOne({ email: email });
-    if (validEmail) {
-      res.status(401).send("Verifique sua senha");
-    } else {
-      res.status(400).send("Este email não está cadastrado");
-    }
+  }else{
+    res.status(400).send("Email ou senha incorreta!")
   }
+
 };
 
 module.exports = { addUser, validUser };

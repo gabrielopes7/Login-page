@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+}
+
+nav ul {
+  border-radius: 10px;
+  border: 1px;
+}/*# sourceMappingURL=main.css.map */

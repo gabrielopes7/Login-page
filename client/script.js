@@ -65,17 +65,17 @@ function submitUser(user) {
 }
 
 function validPassword(password) {
-  const rePassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/;
-  if (!rePassword.test(password)) {
+  const regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/;
+  if (!regexPassword.test(password)) {
     return false;
   }
   return true;
 }
 
 function validEmail(email, emailValid) {
-  var re = /\S+@\S+\.\S+/;
+  const regexEmail = /\S+@\S+\.\S+/;
 
-  if (!re.test(email) || !re.test(emailValid)) {
+  if (!regexEmail.test(email) || !regexEmail.test(emailValid)) {
     return false;
   } else if (email.toLowerCase() !== emailValid.toLowerCase()) {
     return false;
