@@ -1,15 +1,15 @@
+$body-theme: #FFFBF3;
+
+
+
+
 *{
     margin: 0;
     padding: 0;
 }
 
-nav{
-    display: flex;
+body{
+    background-color: $body_theme;
 }
 
-nav{
-    ul{
-        border-radius: 10px;
-        border: 1px;
-    }
-}
+@import "_login.scss";

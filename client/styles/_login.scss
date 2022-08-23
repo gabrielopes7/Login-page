@@ -1,0 +1,81 @@
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap';
+
+
+$fontMain: 'Montserrat', sans-serif;
+
+
+#mainTitle{
+    font-family: $fontMain;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #3E4348;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+#container{
+    font-family: $fontMain;   
+    padding: 30px;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.068);
+    max-width: 400px;
+    max-height: 60vh;
+    margin: auto;
+    background-color: #FFFFFF;
+}
+
+#formInput{
+    margin: auto;
+}
+
+.labelOfInputs{
+    text-align: start;
+    margin-bottom: 10px;
+    color: #848587;
+    font-size: 0.9rem;
+}
+
+.inputStyle{
+    font-family: $fontMain;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 5px;
+    width: 95%;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.buttonAndLinks{
+    text-align: center;
+}
+
+#buttonSignIn{
+    font-family: $fontMain;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    background-color: #17AD1E;
+    width: 80%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    border: none;
+    border-radius: 25px;
+}
+
+#links{
+    font-family: $fontMain;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and(max-width: 620px) {
+    #container{
+        width: 80%;
+    }
+    .inputStyle{
+        width: 100%;
+    }
+}

@@ -4,49 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/main.css" />
     <title>Login</title>
   </head>
   <body>
-    <nav>
-      <ul class="">
-        <li class=""><a class="nav-link" href="#" disabled>Home</a></li>
-        <li class="">
-          <a class="" href="http://localhost:5000/">Área do usuário</a>
-        </li>
-        <li class=""><a class="nav-link" href="#" disabled>Produtos</a></li>
-        <li class=""><a class="nav-link" href="#" disabled>Contato</a></li>
-      </ul>
-    </nav>
-    <h1 class="">Área de login</h1>
-    <main class="">
-      <div class="">
-        <div class="">
-          <form class="">
-            <div class="">
-              <label for="inputEmail" class=""
-                >Email</label
-              >
-              <div class="">
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+    <h1 id="mainTitle">Que bom te ver novamente</h1>
+    <main id="container">
+      <div>
+        <form id="formInput">
+    
+            <label for="inputEmail" class="labelOfInputs">Your email</label>
+            <div>
+              <input type="email" class="inputStyle" id="inputEmail" placeholder="Email" />
+            </div>
+            <div>
+              <label for="inputSenha" class="labelOfInputs">Your password</label>
+              <div>
+                <input type="password" class="inputStyle" id="inputPassword" placeholder="Password"/>
               </div>
             </div>
-            <div class="">
-              <label for="inputSenha" class=""
-                >Senha</label
-              >
-              <div class="">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
-              </div>
-            </div>
+          
           </form>
-          <div class="">
-            <button type="submit" class="" onclick="userValidation()">Entrar</button>
-            <button class="btn">Esqueceu a senha?</button>
-          </div>
-          <div class="">
-            <a href="http://localhost:5000/criarconta" class="">Criar uma conta</a>
-          </div>
+        <div class="buttonAndLinks">
+          <button id="buttonSignIn" type="submit" onclick="userValidation()">Entrar</button>
+        </div>
+        <div class="buttonAndLinks" id="links">
+          <a href="http://localhost:5000/criarconta">Criar uma conta</a>
+          <a href="#">Esqueceu a senha?</a>
         </div>
       </div>
     </main>
